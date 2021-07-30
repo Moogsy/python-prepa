@@ -248,6 +248,29 @@ class Polynom:
 
         return prod_
 
+    @classmethod
+    def taylor(cls, f: FunctionType, a: float, n: int, h: float = 1e-5) -> Polynom:
+        """
+        Taylor series of function f around a of order n using h to approximate the n-th derivative
+        """
+        sum_ = Polynom.zero()
+
+        def df(f):
+            return lambda x: (f(x + h) - f(x - h)) / (2 * h)
+
+        for k in range(n):
+            sum_ += f(a) * Polynom.Xpow(k) / factorial(k)
+            f = df(f) # type: ignore
+
+        return sum_
+
+    @classmethod
+    def mclaurin(cls, f: FunctionType, n: int, h: float = 1e-5) -> Polynom:
+        """
+        Mclaurin series of function f of order n using h to approximate the n-th derivative
+        """
+        return cls.taylor(f, 0, n, h)
+
     @property
     def coefficients(self) -> tuple[Scalar, ...]:
         """
