@@ -1,1 +1,0 @@
-Fait en TP d'info, trace des lignes de champ entre différentes charges électriques.

@@ -1,0 +1,1 @@
+Une classe polynome qui fait tout et n'importe quoi

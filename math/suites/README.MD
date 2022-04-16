@@ -1,1 +1,0 @@
-Représentation graphique de certaines suites, rien de véritablement "utile"
