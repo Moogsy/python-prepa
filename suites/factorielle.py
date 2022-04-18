@@ -22,4 +22,8 @@ Y2 = special.factorial(X, exact=False)
 Y3 = stirling(X)
 
 df = pd.DataFrame(data=dict(exact=Y1, gamma=Y2, stirling=Y3))
-print(df)
+
+fig, ax = plt.subplots()
+table = ax.table(cellText=df.values, colLabels=df.columns, loc="center")
+
+plt.show()
