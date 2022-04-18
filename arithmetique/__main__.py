@@ -13,10 +13,10 @@ def pgcd(a: int, b: int) -> int:
 def ppcm(a: int, b: int) -> int: 
     """
     Calcul du PPCM en utilisant la relation 
-    a * b = pgcd(a, b) * ppcm(a, b)
+    |a * b| = pgcd(a, b) * ppcm(a, b)
     où a et b sont des entiers
     """
-    return (a * b) // pgcd(a, b)
+    return abs(a * b) // pgcd(a, b)
 
 def est_premier(n: int) -> bool: 
     """
@@ -73,3 +73,10 @@ def facteurs_premiers(n: int) -> list[tuple[int, int]]:
             decomposition.append((p, k))
 
     return decomposition
+
+def bezout(a: int, b: int) -> tuple[int, int]:
+    """
+    Renvoie un couple de coefficients (u, v) tel que a * u + b * v = 1
+    """
+    pass
+
