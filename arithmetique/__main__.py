@@ -77,3 +77,4 @@ def facteurs_premiers(n: int) -> list[tuple[int, int]]:
             decomposition.append((p, k))
 
     return decomposition
+

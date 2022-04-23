@@ -9,6 +9,8 @@ im = np.zeros((256, 256, 3), dtype=np.uint8)
 line = np.linspace(0, 255, 256, dtype=np.uint8)
 
 red = np.meshgrid(line, line)[0]
+
+
 blue = red.transpose()
 green = np.zeros((256, 256))
 
