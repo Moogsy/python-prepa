@@ -37,3 +37,4 @@ def tri_rapide(li: list, a: int = 0, b: int = -1) -> list:
 a = [65, 2, 5, 2, 6, 7, 8]
 tri_rapide(a)
 print(a)
+
