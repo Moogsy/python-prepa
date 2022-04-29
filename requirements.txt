@@ -2,3 +2,4 @@ matplotlib
 numba
 numpy
 scipy
+sympy
