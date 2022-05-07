@@ -1,20 +1,22 @@
 from typing import Generator, List, TypeVar
 
-T = TypeVar('T')
+T = TypeVar("T")
+
 
 def perm(li: list) -> Generator[list, None, None]:
-    
+
     if len(li) <= 1:
-        return 
+        return
 
     if len(li) == 2:
         yield li
         yield li[::-1]
-        return 
+        return
 
     for index, obj in enumerate(li):
-        for sub in perm(li[:index] + li[index + 1:]):
+        for sub in perm(li[:index] + li[index + 1 :]):
             yield [obj] + sub
+
 
 def perm2(li: List[T]) -> List[List[T]]:
 
@@ -22,15 +24,15 @@ def perm2(li: List[T]) -> List[List[T]]:
         return []
 
     if len(li) == 2:
-        return [li, li[::-1]] 
+        return [li, li[::-1]]
 
     out = []
 
     for index, obj in enumerate(li):
-        for sub in perm2(li[:index] + li[index + 1:]):
+        for sub in perm2(li[:index] + li[index + 1 :]):
             out.append([obj] + sub)
 
-    return out 
+    return out
 
 
 def _test(fn):
@@ -44,6 +46,7 @@ def _test(fn):
     assert all(x in ref for x in cmp)
 
     print("ok")
+
 
 if __name__ == "__main__":
     _test(perm)

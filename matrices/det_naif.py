@@ -34,7 +34,7 @@ def det(A: np.ndarray) -> complex:
         # Developpement selon la premiere ligne
         N = extraction(A, 0, j)
 
-        num = (-1)**(j + 2) * A[0, j] * det(N)
+        num = (-1) ** j * A[0, j] * det(N)
         somme += num
 
     return somme

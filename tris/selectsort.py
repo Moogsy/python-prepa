@@ -1,6 +1,6 @@
 def min_index(li: list, utilises: list[int]) -> tuple[int, object]:
     """
-    Renvoie l'indice et le minimum de la liste 
+    Renvoie l'indice et le minimum de la liste
     passee en argument, en excluant ceux dont les indices
     sont contenus dans la liste utilises.
     """
@@ -9,13 +9,13 @@ def min_index(li: list, utilises: list[int]) -> tuple[int, object]:
 
     for i, x in enumerate(li):
         if x <= mini and i not in utilises:
-            mini = x 
-            index = i 
+            mini = x
+            index = i
 
     return index, mini
 
 
-def tri_selection(li: list) -> list: 
+def tri_selection(li: list) -> list:
     sortie = []
     utilises = []
 
